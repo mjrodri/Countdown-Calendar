@@ -1,0 +1,18 @@
+from datetime import datetime, timedelta
+
+def countdown_calendar(end_date):
+    # Get the current date
+    current_date = datetime.now().date()
+    
+    # Calculate the number of days left until the end date
+    days_left = (end_date - current_date).days
+    
+    # Print the countdown calendar
+    print("Countdown Calendar:")
+    for i in range(days_left + 1):
+        date = current_date + timedelta(days=i)
+        print(date.strftime("%Y-%m-%d"), ":", days_left - i, "days left")
+
+# Example usage:
+end_date = datetime(2024, 12, 31).date()  # Set the end date
+countdown_calendar(end_date)
